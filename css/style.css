@@ -1,0 +1,306 @@
+:root {
+    --blanco: #ffffff;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --oscuro: #212121;
+    --fuentePrincipal: 'Krub', sans-serif;
+}
+
+
+/**Generales**/
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--fuentePrincipal);
+    background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco), 100%);
+}
+
+.w-sm-100 {
+    width: 100%;
+    /*esta clase es para que el boton tome el 100% de su espacio y que no modifique la clases ya sea de boton o otras que tengamo*/
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+        /*esta clase es para que el boton tome el 100% de su espacio y que no modifique la clases ya sea de boton o otras que tengamo*/
+    }
+}
+
+.flex {
+    display: flex;
+    /*una utilidad para activar displey flex sin modificar algo significatiovo se apoya con la de abajo tambien*/
+}
+
+.alinear_derecha {
+    justify-content: flex-end;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    max-width: 120rem;
+    /**width: 120rem; esto es algo fijo**/
+    margin: 0 auto;
+    /**con este contendor lo hacemos para centrar el contenido**/
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: var(--blanco);
+}
+
+
+/*botones*/
+
+.boton {
+    background-color: var(--secundario);
+    margin-top: 4rem;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blanco);
+    text-transform: uppercase;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+    /**con este media y el width de 90% y text-align center haremos que el boton cuando la pantalla sea pequeña ocupe todo el espacio asi se pude ver mejor**/
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+
+/**header**/
+
+.titulo {
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
+
+
+/**navecación**/
+
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navegacion__enlace {
+    color: var(--blanco);
+    padding: 1rem;
+    background-color: var(--secundario);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.navegacion__enlace:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+/** Hero**/
+
+.hero {
+    background-image: url(../img/develop.jpg);
+    background-position: center;
+    height: 450px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.contenido_hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /**aqui estamos alineando verticalmente con column al hacer eso el centrado se reliza con align-items (en el sentido de izquierda derecha) y justify-content (centras de arriba hacia abajo)**/
+}
+
+.contenido_hero h2,
+.contenido_hero p {
+    color: var(--blanco);
+}
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/**servicios**/
+
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        gap: 2rem;
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos {
+    background-color: var(--primario);
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/**Contacto**/
+
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    /*Utiliza el valor mas pequeño si esta disponible, con esto te ahorras media queries*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    color: var(--primario);
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor_campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        grid-template-rows: auto auto 20rem;
+    }
+    .campo:nth-child(3) {
+        grid-column: 1/3;
+        /*con nth-child conseguimos usar el hijo de campo que este caso es correo que esta en la posicion 3*/
+    }
+    .campo:nth-child(4) {
+        grid-column: 1/3;
+    }
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 20rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+
+/*footer*/
+
+.footer {
+    text-align: center;
+}
