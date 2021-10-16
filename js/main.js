@@ -25,7 +25,7 @@ function enviando(evento) {
     localStorage.setItem('Datos', JSON.stringify(datos));
     let resultado = JSON.parse(localStorage.getItem('Datos'))
     evento.preventDefault();
-    alert('resultado' + resultado.nombre + 'tipo' + typeof(resultado))
+    alert('El Mensaje ha sidio Recibido  ' + resultado.nombre)
 }
 //const { nombre, email, telephone, mensaje } = datos
 
