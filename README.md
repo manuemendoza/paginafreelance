@@ -25,6 +25,7 @@ La estructura del HTML fue dividida en 6 partes:
 * Por ultimo un formulario de contacto donde nos podemos poner en contacto
 
 El CSS:
+<br>
 Para las clases en el CSS use la nomenclatur de VEN para asi poder seguir el hilo. 
 tambien use nomalize para hacer un pequeño resteo a la pagina, tambien puse el box-sizing: boder-box y box-sizing: inherit, para que las medidas del margin, paddig  y border no se me acumularan. por untimo estandarice mis unidades de medida para poder usar los rem poniendo el fon-size del HTML en 62.5 % y el del body en 16 px esto hace que 1 rem sea igual a 10 px
 
